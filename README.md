@@ -1,0 +1,11 @@
+# TUGAS_UJIAN AKHIR SEMESTER_SISTEM INFORMASI GEOGRAFIS
+
+TEMA : PETA TEMATIK PERSEBARAN COVID 19 KOTA SURAKARTA
+
+NAMA ANGGOTA KELOMPOK :
+
+1. Wahyu Maulana Hassanudin (G.111.20.0022)
+2. Fariz Syahputra          (G.111.20.0029)
+3. Dika Salma Laili         (G.111.20.0046)
+4. Ayu Dwi Indriani         (G.111.20.0049)
+5. Augusty Putri Maharani   (G.111.20.0056)
