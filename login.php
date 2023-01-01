@@ -18,6 +18,7 @@
         <div class="row h-100">
             <div class="col-lg-5 col-12">
             <?php
+            error_reporting(0);
             session_start();
             global $conn;
             $conn = oci_connect('mvdemo', 'mvdemo', 'localhost/XE');
