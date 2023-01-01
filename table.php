@@ -37,7 +37,7 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
-                            <a href="index_baru.html" class='sidebar-link'>
+                            <a href="index.html" class='sidebar-link'>
                                 <i class="bi bi-map-fill"></i>
                                 <span>Peta</span>
                             </a>
