@@ -52,7 +52,7 @@
 
                         <li class="sidebar-item  has-sub">
                           <a href="#" class='sidebar-link'>
-                              <i class="bi bi-info-square-fill"></i>
+                              <i class="bi bi-info-circle-fill"></i>
                               <span>Legenda</span>
                           </a>                            
                         </li>
@@ -70,6 +70,13 @@
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-medical-fill"></i>
                                 <span>Form Edit Data</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="logout.php" class='sidebar-link'>
+                                <i class="bi bi-door-open-fill"></i>
+                                <span>Logout</span>
                             </a>
                         </li>
 
