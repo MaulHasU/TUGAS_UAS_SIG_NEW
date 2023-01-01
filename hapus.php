@@ -6,7 +6,7 @@ $objExecute = oci_execute($objParse, OCI_DEFAULT);
 if($objExecute)  
 {  
 oci_commit($objConnect);
-echo "Record Deleted.";  
+echo "Record Berhasil Dihapus.";  
 }  
 else  
 {  

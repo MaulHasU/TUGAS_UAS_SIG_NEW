@@ -37,7 +37,7 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
-                            <a href="index_baru.html" class='sidebar-link'>
+                            <a href="index.html" class='sidebar-link'>
                                 <i class="bi bi-map-fill"></i>
                                 <span>Peta</span>
                             </a>
@@ -134,7 +134,7 @@
                                         <td><?php echo $row['TOTALTP'] ?></td>
                                         <td>
                                                             <a href="edit.php?id=<?php echo $row['ID'] ?>" class="edit"><i class="bi bi-pencil-square"></i></a>
-                                                            <a href="hapus.php?id=<?php echo $row['ID'] ?>" class="delete"><i class="bi bi-trash-fill"></i></a>
+                                                            <a href="hapus.php?id=<?php echo $row['ID'] ?>" class="delete" onclick="return confirm('Anda yakin untuk mengahpus data ini?')"><i class="bi bi-trash-fill"></i></a>
                                         </td>
                                         </tr>
 
