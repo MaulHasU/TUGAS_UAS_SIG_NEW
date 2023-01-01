@@ -102,6 +102,8 @@ if(isset($_POST['submit'])){
                             </a>
                         </li>
 
+                        <li class="sidebar-title">Sessions</li>
+
                         <li class="sidebar-item">
                             <a href="logout.php" class='sidebar-link'>
                                 <i class="bi bi-door-open-fill"></i>
