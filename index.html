@@ -1,0 +1,232 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>TUGAS UJIAN AKHIR SEMESTER SISTEM INFORMASI GEOGRAFIS</TITLE>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+
+<link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
+<link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/css/app.css">
+<link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+<script language="Javascript" src="http://localhost:8888/mapviewer/fsmc/jslib/oraclemaps.js"></script>
+<script language=javascript>
+  var mapview;
+function showMap()
+{ 
+ var baseURL  = "http://localhost:8888/mapviewer";
+ var mapCenterLon = 480022.53;
+ var mapCenterLat =  9164417.244;
+ var mapZoom      =  4;
+ var mpoint = MVSdoGeometry.createPoint(mapCenterLon,mapCenterLat,32749);
+ mapview = new MVMapView(document.getElementById("map"), baseURL);
+ mapview.addMapTileLayer(new MVMapTileLayer("mvdemo.ADM_SOLO_TILE_NEW"));
+ mapview.setCenter(mpoint);
+ mapview.setZoomLevel(mapZoom);
+ mapview.display();
+ addThemeBasedFOI();
+}
+
+function addThemeBasedFOI()
+    {
+      var themebasedfoi1 = new MVThemeBasedFOI('themebasedfoi1','mvdemo.SOLO_ADM');
+      themebasedfoi1.enableAutoWholeImage(true) ;
+      mapview.addThemeBasedFOI(themebasedfoi1);
+      
+      var themebasedfoi2 = new MVThemeBasedFOI('themebasedfoi2','mvdemo.SEMBUH_THEME_NEW');
+      mapview.addThemeBasedFOI(themebasedfoi2);
+
+      var themebasedfoi3 = new MVThemeBasedFOI('themebasedfoi3','mvdemo.MD_THEME_NEW');
+      mapview.addThemeBasedFOI(themebasedfoi3);
+
+      var themebasedfoi4 = new MVThemeBasedFOI('themebasedfoi4','mvdemo.TOTALKS_THEME_NEW');
+      mapview.addThemeBasedFOI(themebasedfoi4);
+
+      var themebasedfoi5 = new MVThemeBasedFOI('themebasedfoi5','mvdemo.TOTALTP_THEME_NEW');
+      mapview.addThemeBasedFOI(themebasedfoi5);
+    }
+    
+    function setVisible(item)
+    {
+      var themebasedfoi = mapview.getThemeBasedFOI(item.value);	  		
+      themebasedfoi.setVisible(!themebasedfoi.isVisible());
+    }	
+
+</script>
+</head>
+<body onload=javascript:showMap();>
+  
+   <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Menu</li>
+
+                        <li class="sidebar-item active ">
+                            <a href="index_baru.html" class='sidebar-link'>
+                                <i class="bi bi-map-fill"></i>
+                                <span>Peta</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                          <a href="#" class='sidebar-link'>
+                              <i class="bi bi-stack"></i>
+                              <span>Atributes</span>
+                          </a>
+                          <ul class="submenu ">
+                              <li class="submenu-item ">
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" value="themebasedfoi1" onclick="setVisible(this)" type="checkbox" id="flexSwitchCheckChecked"
+                                    checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Batas Administrasi</label>
+                                  </div>
+                              </li>
+                              <li class="submenu-item ">
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" value="themebasedfoi2" onclick="setVisible(this)" type="checkbox" id="flexSwitchCheckChecked"
+                                    checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Sembuh</label>
+                                  </div>
+                              </li>
+                              <li class="submenu-item ">
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" value="themebasedfoi3" onclick="setVisible(this)" type="checkbox" id="flexSwitchCheckChecked"
+                                    checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Meninggal Dunia</label>
+                                  </div>
+                              </li>
+                              <li class="submenu-item ">
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" value="themebasedfoi4" onclick="setVisible(this)" type="checkbox" id="flexSwitchCheckChecked"
+                                    checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Total Kasus</label>
+                                  </div>
+                              </li>
+                              <li class="submenu-item ">
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" value="themebasedfoi5" onclick="setVisible(this)" type="checkbox" id="flexSwitchCheckChecked"
+                                  checked>
+                                  <label class="form-check-label" for="flexSwitchCheckChecked">Total Tidak Terpapar</label>
+                                </div>
+                            </li>
+                            </ul>
+                          </li>
+
+                          <li class="sidebar-item  has-sub">
+                          <a href="#" class='sidebar-link'>
+                              <i class="bi bi-info-square-fill"></i>
+                              <span>Legenda</span>
+                          </a>
+                            <ul class="submenu ">
+                                <div>
+                                    <li class="submenu-item ">
+                                    <a href="#">Sembuh</a>   
+                                    <img src="assets/images/samples/sembuh.png">                                                 
+                                    </li>
+                                </div>
+                                <div>
+                                    <li class="submenu-item ">
+                                    <a href="#">Meninggal Dunia</a>               
+                                    <img src="assets/images/samples/md.png">
+                                    </li>
+                                </div>
+                                <div>
+                                    <li class="submenu-item ">
+                                    <a href="#">Total Kasus</a>
+                                    <img src="assets/images/samples/totalks.png">
+                                    </li>
+                                </div>
+                                <div>
+                                    <li class="submenu-item ">
+                                    <a href="#">Total Tidak Terpapar</a>
+                                    <img src="assets/images/samples/totaltp.png">
+                                    </li>
+                                </div>                  
+                            </ul>
+                          </li>
+
+                        <li class="sidebar-title">Form &amp; Tabel</li>
+                            
+                        <li class="sidebar-item">
+                            <a href="table.php" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Tabel Data</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                <span>Form Edit Data</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>PETA TEMATIK PERSEBARAN COVID 19 SURAKARTA</h3>
+                            <p class="text-subtitle text-muted">Menampilkan Persebaran Covid 19 di Kota Surakarta </p>
+                        </div>
+                        <div class="col-12 col-md-6 order-md-2 order-first">
+                            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index_baru.html">Peta</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+              <div id="map" style="left:3px; top:0px; width:1000px; height:650px"></div>
+            
+            </div>
+            </div>
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2022 &copy; Kelompok Cemara</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                                href="#">Kelompok Cemara</a></p>
+                    </div>
+                </div>
+            </footer>
+    </div>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
