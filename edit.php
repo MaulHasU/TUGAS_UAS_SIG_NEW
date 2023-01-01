@@ -40,6 +40,8 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <script type="text/javascript" scr="jquery-3.6.3.min.js"></script>
   
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -82,7 +84,7 @@ if(isset($_POST['submit'])){
                               <i class="bi bi-info-square-fill"></i>
                               <span>Legenda</span>
                           </a>                            
-                          </li>
+                        </li>
 
                         <li class="sidebar-title">Form &amp; Tabel</li>
 
@@ -314,47 +316,46 @@ if(isset($_POST['submit'])){
 <script type="text/javascript">
     
     $("#SEMBUH").keyup(function() {
-        var a = parseFloat($("ISOLASI").val());
-        var b = parseFloat($("PERAWATAN").val());
-        var c = parseFloat($("MD").val());
-        var d = parseFloat($("SEMBUH").val());
+        var a = parseFloat($("#ISOLASI").val());
+        var b = parseFloat($("#PERAWATAN").val());
+        var c = parseFloat($("#MD").val());
+        var d = parseFloat($("#SEMBUH").val());
         var e = a + b + c + d;
         $("#TOTALKS").val(e);
     });
 
     $("#ISOLASI").keyup(function() {
-        var a = parseFloat($("SEMBUH").val());
-        var b = parseFloat($("PERAWATAN").val());
-        var c = parseFloat($("MD").val());
-        var d = parseFloat($("ISOLASI").val());
+        var a = parseFloat($("#SEMBUH").val());
+        var b = parseFloat($("#PERAWATAN").val());
+        var c = parseFloat($("#MD").val());
+        var d = parseFloat($("#ISOLASI").val());
         var e = a + b + c + d;
         $("#TOTALKS").val(e);
     });
 
     $("#PERAWATAN").keyup(function() {
-        var a = parseFloat($("SEMBUH").val());
-        var b = parseFloat($("ISOLASI").val());
-        var c = parseFloat($("MD").val());
-        var d = parseFloat($("SEMBUH").val());
+        var a = parseFloat($("#PERAWATAN").val());
+        var b = parseFloat($("#ISOLASI").val());
+        var c = parseFloat($("#MD").val());
+        var d = parseFloat($("#SEMBUH").val());
         var e = a + b + c + d;
         $("#TOTALKS").val(e);
     });
 
     $("#MD").keyup(function() {
-        var a = parseFloat($("SEMBUH").val());
-        var b = parseFloat($("ISOLASI").val());
-        var c = parseFloat($("PERAWATAN").val());
-        var d = parseFloat($("MD").val());
+        var a = parseFloat($("#SEMBUH").val());
+        var b = parseFloat($("#ISOLASI").val());
+        var c = parseFloat($("#PERAWATAN").val());
+        var d = parseFloat($("#MD").val());
         var e = a + b + c + d;
         $("#TOTALKS").val(e);
     });
 
     $("#JMLPDDK").keyup(function() {
-        var a = parseFloat($("JMLPDDK").val());
-        var b = parseFloat($("TOTALKS").val());
-        var c = a - b
+        var a = parseFloat($("#JMLPDDK").val());
+        var b = parseFloat($("#TOTALKS").val());
+        var c = a - b;
         $("#TOTALTP").val(c);
     });
 
-
-</script>
+    </script>

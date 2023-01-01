@@ -48,6 +48,14 @@
                               <i class="bi bi-stack"></i>
                               <span>Atributes</span>
                           </a>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                          <a href="#" class='sidebar-link'>
+                              <i class="bi bi-info-square-fill"></i>
+                              <span>Legenda</span>
+                          </a>                            
+                        </li>
 
                         <li class="sidebar-title">Forms &amp; Tabel</li>
 
