@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
   $ttlks = $_POST['TOTALKS'];
   $ttltp = $_POST['TOTALTP'];
 
-  $oci = "UPDATE SOLO 
+  $oci = "UPDATE KECA_SOLO 
   SET KECAMATAN ='$namakec', SEMBUH ='$sembuh', ISOLASI ='$isolasi', PERAWATAN ='$perawatan', MD ='$md', JMLPDDK = '$jmlpddk', TOTALKS = '$ttlks', TOTALTP = '$ttltp'
   WHERE ID ='$id'";
 
@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="index.php"><img src="assets/images/logo/covid.png" alt="Logo" srcset=""></a>
+                            <a href="map.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="map.html" class='sidebar-link'>
                                 <i class="bi bi-map-fill"></i>
                                 <span>Peta</span>
                             </a>
@@ -96,7 +96,7 @@ if(isset($_POST['submit'])){
                         </li>
 
                         <li class="sidebar-item active">
-                            <a href="#" class='sidebar-link'>
+                            <a href="table.php" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-medical-fill"></i>
                                 <span>Form Edit Data</span>
                             </a>
@@ -131,7 +131,7 @@ if(isset($_POST['submit'])){
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index_baru.html">Form & Table</a></li>
+                                    <li class="breadcrumb-item"><a href="map.html">Form & Table</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Form Edit</li>
                                 </ol>
                             </nav>
@@ -146,7 +146,7 @@ if(isset($_POST['submit'])){
                                     <h4 class="card-title">Klik Submit Untuk Ubah Data</h4>
                                 </div>
                                 <?php
-                                $oci = "SELECT KECAMATAN,SEMBUH,ISOLASI,PERAWATAN,MD,JMLPDDK,TOTALKS,TOTALTP FROM SOLO WHERE ID = '$id'";
+                                $oci = "SELECT KECAMATAN,SEMBUH,ISOLASI,PERAWATAN,MD,JMLPDDK,TOTALKS,TOTALTP FROM KECA_SOLO WHERE ID = '$id'";
                                 $result = oci_parse($conn, $oci);
                                 oci_execute($result);
                                 $row = oci_fetch_assoc($result); 

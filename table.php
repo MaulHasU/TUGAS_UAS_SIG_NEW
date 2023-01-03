@@ -25,7 +25,7 @@
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="index.php"><img src="assets/images/logo/covid.png" alt="Logo" srcset=""></a>
+                            <a href="map.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -37,7 +37,7 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="map.html" class='sidebar-link'>
                                 <i class="bi bi-map-fill"></i>
                                 <span>Peta</span>
                             </a>
@@ -103,7 +103,7 @@
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Form & Table</a></li>
+                                    <li class="breadcrumb-item"><a href="map.html">Form & Table</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Tabel Data</li>
                                 </ol>
                             </nav>
@@ -134,7 +134,7 @@
                                     <?php
                                     include "db_conn.php";
 
-                                    $oci = "SELECT ID, KECAMATAN, SEMBUH, ISOLASI, PERAWATAN, MD, JMLPDDK, TOTALKS, TOTALTP FROM SOLO";
+                                    $oci = "SELECT ID, KECAMATAN, SEMBUH, ISOLASI, PERAWATAN, MD, JMLPDDK, TOTALKS, TOTALTP FROM KECA_SOLO";
                                     $result = oci_parse($conn,$oci);
                                     oci_execute($result);
                                     while($row = oci_fetch_assoc($result)){
@@ -151,7 +151,7 @@
                                         <td><?php echo $row['TOTALTP'] ?></td>
                                         <td>
                                                             <a href="edit.php?id=<?php echo $row['ID'] ?>" class="edit"><i class="bi bi-pencil-square"></i></a>
-                                                            <a href="hapus.php?id=<?php echo $row['ID'] ?>" class="delete" onclick="return confirm('Anda yakin untuk mengahpus data ini?')"><i class="bi bi-trash-fill"></i></a>
+                                                            <a href="hapus.php?id=<?php echo $row['ID'] ?>" class="delete" onclick="return confirm('Anda yakin untuk menghapus data ini?')"><i class="bi bi-trash-fill"></i></a>
                                         </td>
                                         </tr>
 

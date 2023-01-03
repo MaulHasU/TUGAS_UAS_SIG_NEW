@@ -1,6 +1,6 @@
 <?php 
 $objConnect = oci_connect("mvdemo","mvdemo","localhost/XE");  
-$strSQL = "DELETE FROM SOLO WHERE ID = '".$_GET["id"]."' ";  
+$strSQL = "DELETE FROM KECA_SOLO WHERE ID = '".$_GET["id"]."' ";  
 $objParse = oci_parse($objConnect, $strSQL);  
 $objExecute = oci_execute($objParse, OCI_DEFAULT);  
 if($objExecute)  

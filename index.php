@@ -31,7 +31,7 @@
                 if($row){
                         $_SESSION['user']=$user;
                         $_SESSION['time_start_login'] = time();
-                        header("location: index.html");
+                        header("location: map.html");
                 }else{
                     echo "wrong password or username";
                 }
@@ -44,7 +44,7 @@
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">Silahkan masukkan username dan password anda. </p>
 
-                    <form action="index.html">
+                    <form action="map.html">
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" name="username" class="form-control form-control-xl" placeholder="Username">
                             <div class="form-control-icon">
