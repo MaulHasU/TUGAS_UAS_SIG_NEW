@@ -1,5 +1,7 @@
 <?php 
 include "db_conn.php";
+
+# fungsi edit data
 $id = $_GET['id'];
 
 if(isset($_POST['submit'])){
@@ -12,11 +14,12 @@ if(isset($_POST['submit'])){
   $ttlks = $_POST['TOTALKS'];
   $ttltp = $_POST['TOTALTP'];
 
-  $oci = "UPDATE KECA_SOLO 
+  # sql statement
+  $sql = "UPDATE KECA_SOLO 
   SET KECAMATAN ='$namakec', SEMBUH ='$sembuh', ISOLASI ='$isolasi', PERAWATAN ='$perawatan', MD ='$md', JMLPDDK = '$jmlpddk', TOTALKS = '$ttlks', TOTALTP = '$ttltp'
   WHERE ID ='$id'";
 
-  $result = oci_parse($conn,$oci);
+  $result = oci_parse($conn,$sql);
   oci_execute($result,OCI_DEFAULT);
   oci_commit($conn);
 }
@@ -146,8 +149,9 @@ if(isset($_POST['submit'])){
                                     <h4 class="card-title">Klik Submit Untuk Ubah Data</h4>
                                 </div>
                                 <?php
-                                $oci = "SELECT KECAMATAN,SEMBUH,ISOLASI,PERAWATAN,MD,JMLPDDK,TOTALKS,TOTALTP FROM KECA_SOLO WHERE ID = '$id'";
-                                $result = oci_parse($conn, $oci);
+                                # mengambil data dari db
+                                $sql = "SELECT KECAMATAN,SEMBUH,ISOLASI,PERAWATAN,MD,JMLPDDK,TOTALKS,TOTALTP FROM KECA_SOLO WHERE ID = '$id'";
+                                $result = oci_parse($conn, $sql);
                                 oci_execute($result);
                                 $row = oci_fetch_assoc($result); 
                                 ?>

@@ -1,18 +1,20 @@
 <?php 
-$objConnect = oci_connect("mvdemo","mvdemo","localhost/XE");  
-$strSQL = "DELETE FROM KECA_SOLO WHERE ID = '".$_GET["id"]."' ";  
-$objParse = oci_parse($objConnect, $strSQL);  
-$objExecute = oci_execute($objParse, OCI_DEFAULT);  
-if($objExecute)  
+include "db_conn.php"; 
+
+# fungsi hapus
+$sql = "DELETE FROM KECA_SOLO WHERE ID = '".$_GET["id"]."' ";  
+$result = oci_parse($conn, $sql);  
+$execute = oci_execute($result, OCI_DEFAULT);  
+if($execute)  
 {  
-oci_commit($objConnect);
+oci_commit($conn);
 echo "Record Berhasil Dihapus.";  
 }  
 else  
 {  
-oci_rollback($objConnect);  
-$e = oci_error($objParse);  
+oci_rollback($conn);  
+$e = oci_error($result);  
 echo "Error Delete [".$e['message']."]";  
 }  
-oci_close($objConnect);  
+oci_close($conn);  
 ?>  

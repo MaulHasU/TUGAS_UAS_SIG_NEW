@@ -54,7 +54,7 @@
                           <a href="#" class='sidebar-link'>
                               <i class="bi bi-info-circle-fill"></i>
                               <span>Legenda</span>
-                          </a>                            
+                          </a>                                                      
                         </li>
 
                         <li class="sidebar-title">Forms &amp; Tabel</li>
@@ -132,10 +132,11 @@
                                 </thead>
                                 <tbody>
                                     <?php
+                                    # fungsi menampilkan data table
                                     include "db_conn.php";
 
-                                    $oci = "SELECT ID, KECAMATAN, SEMBUH, ISOLASI, PERAWATAN, MD, JMLPDDK, TOTALKS, TOTALTP FROM KECA_SOLO";
-                                    $result = oci_parse($conn,$oci);
+                                    $sql = "SELECT ID, KECAMATAN, SEMBUH, ISOLASI, PERAWATAN, MD, JMLPDDK, TOTALKS, TOTALTP FROM KECA_SOLO";
+                                    $result = oci_parse($conn,$sql);
                                     oci_execute($result);
                                     while($row = oci_fetch_assoc($result)){
                                     ?>

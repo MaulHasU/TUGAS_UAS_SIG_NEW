@@ -18,22 +18,22 @@
         <div class="row h-100">
             <div class="col-lg-5 col-12">
             <?php
+            include "db_conn.php"; 
+
             error_reporting(0);
             session_start();
-            global $conn;
-            $conn = oci_connect('mvdemo', 'mvdemo', 'localhost/XE');
             if(isset($_POST['login'])){
                 $user = $_POST['USERNAME'];
                 $pass = $_POST['PASSWORD'];
-                $s = oci_parse($conn, "SELECT USERNAME,PASSWORD FROM USERS WHERE USERNAME='$user' AND PASSWORD='$pass'");       
-                oci_execute($s);
-                $row = oci_fetch_all($s, $res);
+                $sql = oci_parse($conn, "SELECT USERNAME,PASSWORD FROM USERS WHERE USERNAME='$user' AND PASSWORD='$pass'");       
+                oci_execute($sql);
+                $row = oci_fetch_all($sql, $res);
                 if($row){
                         $_SESSION['user']=$user;
                         $_SESSION['time_start_login'] = time();
                         header("location: map.html");
                 }else{
-                    echo "wrong password or username";
+                    echo "Password atau username anda salah";
                 }
             }
         ?>

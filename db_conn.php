@@ -1,4 +1,5 @@
 <?php
+#koneksi ke oracle database
 $username = "mvdemo";
 $password = "mvdemo";
 $host = "localhost/XE";
